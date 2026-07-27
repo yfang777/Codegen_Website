@@ -75,17 +75,19 @@ function TaskCard({ task, index }: { task: Task; index: number }) {
           <div className="checkpoint"><span>CHECKPOINT</span>{task.checkpoint}</div>
         </div>
       </div>
-      <div className="media-grid">
+      <div className={`media-grid ${task.figure ? "" : "video-only"}`}>
         <div className="video-wrap" style={{ "--accent": task.accent } as React.CSSProperties}>
           <video controls muted playsInline preload="metadata" src={task.video}>
             Your browser does not support embedded video.
           </video>
           <div className="video-tag"><Play size={12} fill="currentColor" /> SUCCESSFUL ROLLOUT</div>
         </div>
-        <a className="figure-wrap" href={task.figure} target="_blank" rel="noreferrer">
-          <img loading="lazy" src={task.figure} alt={`${task.title} success rate by dataset size`} />
-          <span>SUCCESS RATE CURVE <ArrowUpRight size={14} /></span>
-        </a>
+        {task.figure && (
+          <a className="figure-wrap" href={task.figure} target="_blank" rel="noreferrer">
+            <img loading="lazy" src={task.figure} alt={`${task.title} success rate by dataset size`} />
+            <span>SUCCESS RATE CURVE <ArrowUpRight size={14} /></span>
+          </a>
+        )}
       </div>
     </article>
   );
