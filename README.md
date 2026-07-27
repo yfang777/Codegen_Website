@@ -16,7 +16,7 @@ npm run build
 ```
 
 Task content is defined in `src/data/tasks.ts`. Selected videos and figures live in
-`public/media/robotwin/<task-slug>/`.
+`public/media/robotwin/<robotwin-task-name>/`.
 
 ## Deploy
 
