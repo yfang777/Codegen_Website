@@ -5,8 +5,6 @@ import { tasks, type Task } from "./data/tasks";
 function Nav() {
   const [open, setOpen] = useState(false);
   const items = [
-    ["Overview", "#overview"],
-    ["Approach", "#approach"],
     ["RoboTwin", "#robotwin"],
     ["Citation", "#citation"],
   ];
@@ -63,52 +61,6 @@ function Hero() {
   );
 }
 
-function Overview() {
-  return (
-    <section className="section shell" id="overview">
-      <div className="section-number">01 / OVERVIEW</div>
-      <div className="overview-grid">
-        <h2>From demonstrations<br />to reliable behavior.</h2>
-        <div>
-          <p className="lead">We study policy learning under changing dataset scale, using six manipulation tasks that span contact, ordering, and precision.</p>
-          <p>Our evaluations track how task success evolves as new demonstrations are introduced, offering a controlled view into the relationship between data and robot capability.</p>
-        </div>
-      </div>
-      <div className="stats">
-        <div><strong>06</strong><span>Manipulation tasks</span></div>
-        <div><strong>20k</strong><span>Maximum dataset size</span></div>
-        <div><strong>100</strong><span>Rollouts per checkpoint</span></div>
-        <div><strong>ACT</strong><span>Policy architecture</span></div>
-      </div>
-    </section>
-  );
-}
-
-function Approach() {
-  return (
-    <section className="approach" id="approach">
-      <div className="shell">
-        <div className="section-number light">02 / APPROACH</div>
-        <div className="approach-head">
-          <h2>A simple loop.<br /><em>Measured carefully.</em></h2>
-          <p>Collect, train, and evaluate at regular intervals to make scaling behavior visible.</p>
-        </div>
-        <div className="steps">
-          {[
-            ["01", "Collect", "Gather diverse demonstrations across randomized scenes."],
-            ["02", "Train", "Learn visuomotor policies from progressively larger datasets."],
-            ["03", "Evaluate", "Run held-out rollouts and record stage-aware success."],
-          ].map(([n, title, body]) => (
-            <div className="step" key={n}>
-              <span>{n}</span><h3>{title}</h3><p>{body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function TaskCard({ task, index }: { task: Task; index: number }) {
   return (
     <article className="task-card" id={task.id}>
@@ -145,9 +97,9 @@ function Results() {
 
   return (
     <section className="results section shell" id="robotwin">
-      <div className="section-number">03 / ROBOTWIN RESULTS</div>
+      <div className="section-number">01 / ROBOTWIN RESULTS</div>
       <div className="results-head">
-        <h2>Six tasks.<br />Real rollouts.</h2>
+        <h2>X tasks <em>(continued).</em><br />Real rollouts.</h2>
         <p>Selected successful evaluations from the latest available checkpoints. Open any curve for a closer look.</p>
       </div>
       <div className="filters" role="group" aria-label="Filter tasks">
@@ -170,7 +122,7 @@ function Citation() {
   return (
     <section className="citation" id="citation">
       <div className="shell citation-grid">
-        <div><div className="section-number light">04 / CITATION</div><h2>Build on<br />our work.</h2></div>
+        <div><div className="section-number light">02 / CITATION</div><h2>Build on<br />our work.</h2></div>
         <pre><code>{citation}</code></pre>
       </div>
     </section>
@@ -186,7 +138,7 @@ export function App() {
   return (
     <>
       <Nav />
-      <main><Hero /><Overview /><Approach /><Results /><Citation /></main>
+      <main><Hero /><Results /><Citation /></main>
       <footer className="footer shell">
         <div className="brand"><span className="brand-mark">C</span><span>CODEGEN</span></div>
         <p>Research project website · 2026</p>
