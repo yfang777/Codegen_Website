@@ -102,7 +102,7 @@ function Results() {
       <div className="section-number">01 / ROBOTWIN RESULTS</div>
       <div className="results-head">
         <h2>X tasks <em>(continued).</em><br />Real rollouts.</h2>
-        <p>Selected successful evaluations from the latest available checkpoints. Open any curve for a closer look.</p>
+        <p>For each available comparison curve, the headline reports the highest v19 success rate and its corresponding checkpoint. Open any curve for a closer look.</p>
       </div>
       <div className="filters" role="group" aria-label="Filter tasks">
         <button className={selected === "all" ? "active" : ""} onClick={() => setSelected("all")}>All tasks</button>
