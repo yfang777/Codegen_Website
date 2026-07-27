@@ -42,8 +42,8 @@ export const tasks: Task[] = [
     description: "Identify colored blocks and arrange them into the requested order.",
     video: `${mediaRoot}/rank-blocks-color/rollout.mp4`,
     figure: `${mediaRoot}/rank-blocks-color/success-rate.png`,
-    checkpoint: "19k samples",
-    successRate: 54,
+    checkpoint: "20k samples",
+    successRate: 55,
     accent: "#589a8d",
   },
   {
@@ -64,8 +64,8 @@ export const tasks: Task[] = [
     description: "Localize the alarm clock control and press it with precise contact.",
     video: `${mediaRoot}/click-alarm-clock/rollout.mp4`,
     figure: `${mediaRoot}/click-alarm-clock/success-rate.png`,
-    checkpoint: "17k samples",
-    successRate: 80,
+    checkpoint: "20k samples",
+    successRate: 89,
     accent: "#7566a8",
   },
   {
