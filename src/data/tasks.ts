@@ -41,6 +41,7 @@ export const tasks: Task[] = [
     shortTitle: "Color",
     description: "Identify colored blocks and arrange them into the requested order.",
     video: `${mediaRoot}/03_blocks_ranking_rgb/rollout.mp4`,
+    figure: `${mediaRoot}/03_blocks_ranking_rgb/success-rate.png`,
     checkpoint: "20k samples",
     successRate: 55,
     accent: "#589a8d",
