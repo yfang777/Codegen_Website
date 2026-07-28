@@ -40,6 +40,7 @@ button { font: inherit; }
 .eyebrow span { width: 28px; height: 1px; background: var(--orange); }
 h1, h2 { margin: 0; letter-spacing: -.055em; line-height: .98; font-weight: 500; }
 h1 { max-width: 940px; margin-top: 30px; font-size: clamp(58px, 8.5vw, 122px); position: relative; z-index: 2; }
+.project-title { max-width: 1080px; font-size: clamp(50px, 6.2vw, 88px); }
 h1 em, h2 em { font-family: "Newsreader"; font-weight: 400; }
 .hero-copy { width: min(470px, 100%); margin: 36px 0 0 1px; font-size: 17px; line-height: 1.65; color: #555a57; position: relative; z-index: 2; }
 .hero-actions { display: flex; gap: 12px; margin-top: 32px; position: relative; z-index: 2; }

@@ -1,6 +1,7 @@
-# Codegen Robotics Project Website
+# SDK Project Website
 
-A responsive research website with a data-driven RoboTwin results gallery.
+A responsive research website for **SDK: Simulation-in-the-loop Dataset
+Aggregation with Keypoints**, with a data-driven RoboTwin results gallery.
 
 ## Run locally
 

@@ -12,9 +12,9 @@ function Nav() {
   return (
     <header className="nav-wrap">
       <nav className="nav shell" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="Codegen home">
-          <span className="brand-mark">C</span>
-          <span>CODEGEN</span>
+        <a className="brand" href="#top" aria-label="SDK home">
+          <span className="brand-mark">S</span>
+          <span>SDK</span>
         </a>
         <div className={`nav-links ${open ? "is-open" : ""}`}>
           {items.map(([label, href]) => (
@@ -36,10 +36,10 @@ function Hero() {
   return (
     <section className="hero shell" id="top">
       <div className="eyebrow"><span /> ROBOT LEARNING · 2026</div>
-      <h1>Learning robot skills,<br /><em>one experience at a time.</em></h1>
+      <h1 className="project-title">SDK:<br /><em>Simulation-in-the-loop Dataset Aggregation with Keypoints</em></h1>
       <p className="hero-copy">
-        A research project exploring how data quantity shapes policy performance
-        across diverse bimanual manipulation tasks.
+        A data aggregation framework that uses simulation feedback and keypoints
+        to build effective robot-learning datasets.
       </p>
       <div className="hero-actions">
         <a className="button primary" href="#robotwin">Explore results <ArrowDown size={17} /></a>
@@ -120,7 +120,7 @@ function Results() {
 }
 
 function Citation() {
-  const citation = `@misc{codegen2026,\n  title  = {Codegen: Data Scaling for Robot Learning},\n  author = {Project Authors},\n  year   = {2026}\n}`;
+  const citation = `@misc{sdk2026,\n  title  = {SDK: Simulation-in-the-loop Dataset Aggregation with Keypoints},\n  author = {Project Authors},\n  year   = {2026}\n}`;
   return (
     <section className="citation" id="citation">
       <div className="shell citation-grid">
@@ -142,7 +142,7 @@ export function App() {
       <Nav />
       <main><Hero /><Results /><Citation /></main>
       <footer className="footer shell">
-        <div className="brand"><span className="brand-mark">C</span><span>CODEGEN</span></div>
+        <div className="brand"><span className="brand-mark">S</span><span>SDK</span></div>
         <p>Research project website · 2026</p>
         <a href="#top">Back to top ↑</a>
       </footer>
