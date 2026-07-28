@@ -52,6 +52,7 @@ export const tasks: Task[] = [
     shortTitle: "Size",
     description: "Compare multiple blocks and place them in the correct size ordering.",
     video: `${mediaRoot}/04_blocks_ranking_size/rollout.mp4`,
+    figure: `${mediaRoot}/04_blocks_ranking_size/success-rate.png`,
     checkpoint: "18k samples",
     successRate: 24,
     accent: "#4878a8",
