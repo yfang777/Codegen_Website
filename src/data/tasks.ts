@@ -16,7 +16,7 @@ export const tasks: Task[] = [
   {
     id: "adjust-bottle",
     title: "Adjust Bottle",
-    shortTitle: "Bottle",
+    shortTitle: "adjust_bottle",
     description: "Reorient and position a bottle to satisfy the target configuration.",
     video: `${mediaRoot}/01_adjust_bottle_01/rollout.mp4`,
     figure: `${mediaRoot}/01_adjust_bottle_01/success-rate.png`,
@@ -27,7 +27,7 @@ export const tasks: Task[] = [
   {
     id: "beat-block-hammer",
     title: "Beat Block with Hammer",
-    shortTitle: "Hammer",
+    shortTitle: "beat_block_hammer",
     description: "Grasp the hammer and execute a controlled strike on the target block.",
     video: `${mediaRoot}/02_beat_block_hammer_01/rollout.mp4`,
     figure: `${mediaRoot}/02_beat_block_hammer_01/success-rate.png`,
@@ -38,7 +38,7 @@ export const tasks: Task[] = [
   {
     id: "rank-blocks-color",
     title: "Rank Blocks by Color",
-    shortTitle: "Color",
+    shortTitle: "blocks_ranking_rgb",
     description: "Identify colored blocks and arrange them into the requested order.",
     video: `${mediaRoot}/03_blocks_ranking_rgb/rollout.mp4`,
     figure: `${mediaRoot}/03_blocks_ranking_rgb/success-rate.png`,
@@ -49,7 +49,7 @@ export const tasks: Task[] = [
   {
     id: "rank-blocks-size",
     title: "Rank Blocks by Size",
-    shortTitle: "Size",
+    shortTitle: "blocks_ranking_size",
     description: "Compare multiple blocks and place them in the correct size ordering.",
     video: `${mediaRoot}/04_blocks_ranking_size/rollout.mp4`,
     figure: `${mediaRoot}/04_blocks_ranking_size/success-rate.png`,
@@ -60,7 +60,7 @@ export const tasks: Task[] = [
   {
     id: "click-alarm-clock",
     title: "Click Alarm Clock",
-    shortTitle: "Clock",
+    shortTitle: "click_alarmclock",
     description: "Localize the alarm clock control and press it with precise contact.",
     video: `${mediaRoot}/05_click_alarmclock_01/rollout.mp4`,
     figure: `${mediaRoot}/05_click_alarmclock_01/success-rate.png`,
@@ -71,7 +71,7 @@ export const tasks: Task[] = [
   {
     id: "click-bell",
     title: "Click Bell",
-    shortTitle: "Bell",
+    shortTitle: "click_bell",
     description: "Approach the bell and activate its top button without disturbing the scene.",
     video: `${mediaRoot}/06_click_bell_00/rollout.mp4`,
     figure: `${mediaRoot}/06_click_bell_00/success-rate.png`,
@@ -82,7 +82,7 @@ export const tasks: Task[] = [
   {
     id: "dump-bin-bigbin",
     title: "Dump Bin into Big Bin",
-    shortTitle: "Dump Bin",
+    shortTitle: "dump_bin_bigbin",
     description: "Grasp the small bin and pour its contents into the larger target bin.",
     video: `${mediaRoot}/07_dump_bin_bigbin_00/rollout.mp4`,
     figure: `${mediaRoot}/07_dump_bin_bigbin_00/success-rate.png`,
@@ -93,7 +93,7 @@ export const tasks: Task[] = [
   {
     id: "move-can-pot",
     title: "Move Can to Pot",
-    shortTitle: "Can",
+    shortTitle: "move_can_pot",
     description: "Pick up the can and place it securely inside the target pot.",
     video: `${mediaRoot}/08_move_can_pot_00/rollout.mp4`,
     figure: `${mediaRoot}/08_move_can_pot_00/success-rate.png`,
@@ -104,7 +104,7 @@ export const tasks: Task[] = [
   {
     id: "move-playingcard-away",
     title: "Move Playing Card Away",
-    shortTitle: "Card",
+    shortTitle: "move_playingcard_away",
     description: "Grasp and relocate the playing card away from its initial workspace.",
     video: `${mediaRoot}/09_Move_Playingcard_Away/rollout.mp4`,
     figure: `${mediaRoot}/09_Move_Playingcard_Away/success-rate.png`,
@@ -115,7 +115,7 @@ export const tasks: Task[] = [
   {
     id: "move-stapler-pad",
     title: "Move Stapler to Pad",
-    shortTitle: "Stapler",
+    shortTitle: "move_stapler_pad",
     description: "Move the stapler from the workspace and place it onto the target pad.",
     video: `${mediaRoot}/10_Move_Stapler_Pad/rollout.mp4`,
     figure: `${mediaRoot}/10_Move_Stapler_Pad/success-rate.png`,

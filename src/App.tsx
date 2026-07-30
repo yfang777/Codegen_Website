@@ -1,42 +1,57 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowUpRight, Github, Menu, Play, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Play } from "lucide-react";
 import { tasks, type Task } from "./data/tasks";
 
-function Nav() {
-  const [open, setOpen] = useState(false);
-  const items = [
-    ["RoboTwin", "#robotwin"],
-    ["Citation", "#citation"],
-  ];
+const navigationItems = [
+  ["Overview", "#overview"],
+  ["RoboTwin Results", "#robotwin"],
+  ["Citation", "#citation"],
+];
 
+function PageChrome({ progress, activeSection }: { progress: number; activeSection: string }) {
   return (
-    <header className="nav-wrap">
-      <nav className="nav shell" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="SDK home">
-          <span className="brand-mark">S</span>
-          <span>SDK</span>
-        </a>
-        <div className={`nav-links ${open ? "is-open" : ""}`}>
-          {items.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+    <>
+      <div className="scroll-progress" style={{ width: `${progress}%` }} />
+      <aside className="section-tracker" aria-label="Page sections">
+        <nav>
+          {navigationItems.map(([label, href]) => (
+            <a
+              className={activeSection === href.slice(1) ? "active" : ""}
+              href={href}
+              key={href}
+              aria-current={activeSection === href.slice(1) ? "location" : undefined}
+            >
+              {label}
+            </a>
           ))}
-          <a className="nav-github" href="https://github.com/yfang777/Codegen_Website" target="_blank" rel="noreferrer">
-            <Github size={16} /> GitHub
-          </a>
-        </div>
-        <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
-          {open ? <X /> : <Menu />}
-        </button>
+        </nav>
+      </aside>
+      <nav className="compact-nav" aria-label="Page sections">
+        {navigationItems.map(([label, href]) => (
+          <a href={href} key={href}>{label}</a>
+        ))}
       </nav>
-    </header>
+    </>
   );
 }
 
 function Hero() {
   return (
-    <section className="hero shell" id="top">
-      <div className="eyebrow"><span /> ROBOT LEARNING · 2026</div>
-      <h1 className="project-title">SDK:<br /><em>Simulation-in-the-loop Dataset Aggregation with Keypoints</em></h1>
+    <section className="hero shell" id="overview">
+      <h1 className="project-title">
+        <span className="title-mainline">
+          <span className="title-gradient">SDK:</span>{" "}
+          Simulation-in-the-loop Dataset Aggregation with Keypoints
+        </span>
+        <span className="title-tagline">for Robust Imitation Learning</span>
+      </h1>
+      <div className="authors" aria-label="Authors">
+        <span>Yuan Fang<sup>1</sup></span>
+        <span>Second Author<sup>1</sup></span>
+        <span>Third Author<sup>1</sup></span>
+      </div>
+      <p className="affiliation"><sup>1</sup> Columbia University</p>
+      <p className="venue">Robot Learning · 2026</p>
       <p className="hero-copy">
         A data aggregation framework that uses simulation feedback and keypoints
         to build effective robot-learning datasets.
@@ -47,16 +62,17 @@ function Hero() {
           <Github size={17} /> View code
         </a>
       </div>
-      <div className="hero-visual" aria-hidden="true">
-        <div className="orb orb-a" />
-        <div className="orb orb-b" />
-        <div className="coordinate">
-          <span className="x-line" /><span className="y-line" /><i />
-        </div>
-        <div className="hero-label label-a">OBSERVATION</div>
-        <div className="hero-label label-b">ACTION</div>
-        <div className="hero-label label-c">FEEDBACK</div>
-      </div>
+    </section>
+  );
+}
+
+function ProjectHighlight() {
+  return (
+    <section className="project-highlight shell" aria-label="Project summary">
+      <p>
+        SDK uses <strong>purely corrective data</strong> with <strong>relational keypoint</strong>
+        to build more robust imitation policy in both sim and real.
+      </p>
     </section>
   );
 }
@@ -99,10 +115,14 @@ function Results() {
 
   return (
     <section className="results section shell" id="robotwin">
-      <div className="section-number">01 / ROBOTWIN RESULTS</div>
       <div className="results-head">
-        <h2>X tasks <em>(continued).</em><br />Real rollouts.</h2>
-        <p>For each available comparison curve, the headline reports the highest v19 success rate and its corresponding checkpoint. Open any curve for a closer look.</p>
+        <p className="section-kicker">RoboTwin benchmark</p>
+        <h2>RoboTwin Results</h2>
+        <p>
+          Explore {tasks.length} robot-manipulation tasks through real rollouts and
+          success-rate curves. Each headline reports the highest v19 success rate
+          and its corresponding checkpoint.
+        </p>
       </div>
       <div className="filters" role="group" aria-label="Filter tasks">
         <button className={selected === "all" ? "active" : ""} onClick={() => setSelected("all")}>All tasks</button>
@@ -120,11 +140,21 @@ function Results() {
 }
 
 function Citation() {
-  const citation = `@misc{sdk2026,\n  title  = {SDK: Simulation-in-the-loop Dataset Aggregation with Keypoints},\n  author = {Project Authors},\n  year   = {2026}\n}`;
+  const citation = `@misc{sdk2026,
+  title        = {SDK: Simulation-in-the-loop Dataset Aggregation with Keypoints for Robust Imitation Learning},
+  author       = {Fang, Yuan and Second Author and Third Author},
+  institution  = {Columbia University},
+  year         = {2026}
+}`;
+
   return (
-    <section className="citation" id="citation">
-      <div className="shell citation-grid">
-        <div><div className="section-number light">02 / CITATION</div><h2>Build on<br />our work.</h2></div>
+    <section className="citation section" id="citation">
+      <div className="shell">
+        <div className="citation-head">
+          <p className="section-kicker">Citation</p>
+          <h2>Build on our work</h2>
+          <p>If you use SDK in your research, please cite the project.</p>
+        </div>
         <pre><code>{citation}</code></pre>
       </div>
     </section>
@@ -132,19 +162,44 @@ function Citation() {
 }
 
 export function App() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState("overview");
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
-    return () => { document.documentElement.style.scrollBehavior = ""; };
+
+    const updatePageChrome = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollableHeight === 0 ? 0 : (window.scrollY / scrollableHeight) * 100);
+
+      const sectionIds = navigationItems.map(([, href]) => href.slice(1));
+      const currentSection = [...sectionIds]
+        .reverse()
+        .find((id) => document.getElementById(id)!.getBoundingClientRect().top <= window.innerHeight * 0.35);
+      setActiveSection(currentSection ?? sectionIds[0]);
+    };
+
+    updatePageChrome();
+    window.addEventListener("scroll", updatePageChrome, { passive: true });
+    window.addEventListener("resize", updatePageChrome);
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+      window.removeEventListener("scroll", updatePageChrome);
+      window.removeEventListener("resize", updatePageChrome);
+    };
   }, []);
 
   return (
     <>
-      <Nav />
-      <main><Hero /><Results /><Citation /></main>
+      <PageChrome progress={scrollProgress} activeSection={activeSection} />
+      <main><Hero /><ProjectHighlight /><Results /><Citation /></main>
       <footer className="footer shell">
-        <div className="brand"><span className="brand-mark">S</span><span>SDK</span></div>
-        <p>Research project website · 2026</p>
-        <a href="#top">Back to top ↑</a>
+        <p>SDK · Columbia University · 2026</p>
+        <div>
+          <a href="https://github.com/yfang777/Codegen_Website" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#overview">Back to top ↑</a>
+        </div>
       </footer>
     </>
   );
